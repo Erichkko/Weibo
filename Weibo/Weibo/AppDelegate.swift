@@ -16,15 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        
-        
+        //1.创建window
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let vc =  ViewController()
-        
+        //2.设置跟控制器
+        let vc =  MainViewController()
         vc.view.backgroundColor = UIColor.redColor()
         self.window?.rootViewController = vc
         
+        //3.显示根控制器
         self.window?.makeKeyAndVisible()
         return true
     }

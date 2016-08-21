@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FE02AEFD1D69A7B700B9B4CC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02AEFC1D69A7B700B9B4CC /* ProfileViewController.swift */; };
+		FE02AEFF1D69ADBB00B9B4CC /* MainNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02AEFE1D69ADBB00B9B4CC /* MainNavViewController.swift */; };
 		FE57EE801D697B970012DBFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57EE7F1D697B970012DBFE /* AppDelegate.swift */; };
-		FE57EE821D697B970012DBFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57EE811D697B970012DBFE /* ViewController.swift */; };
 		FE57EE871D697B970012DBFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE57EE861D697B970012DBFE /* Assets.xcassets */; };
 		FE57EE951D697B970012DBFE /* WeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57EE941D697B970012DBFE /* WeiboTests.swift */; };
 		FE57EEA01D697B970012DBFE /* WeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57EE9F1D697B970012DBFE /* WeiboUITests.swift */; };
@@ -38,9 +38,9 @@
 
 /* Begin PBXFileReference section */
 		FE02AEFC1D69A7B700B9B4CC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FE02AEFE1D69ADBB00B9B4CC /* MainNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavViewController.swift; sourceTree = "<group>"; };
 		FE57EE7C1D697B970012DBFE /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE57EE7F1D697B970012DBFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE57EE811D697B970012DBFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE57EE861D697B970012DBFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE57EE8B1D697B970012DBFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE57EE901D697B970012DBFE /* WeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +105,6 @@
 			children = (
 				FE57EE7F1D697B970012DBFE /* AppDelegate.swift */,
 				FE57EEAD1D6987E60012DBFE /* Classes */,
-				FE57EE811D697B970012DBFE /* ViewController.swift */,
 				FE57EE861D697B970012DBFE /* Assets.xcassets */,
 				FE57EE8B1D697B970012DBFE /* Info.plist */,
 			);
@@ -171,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				FE57EEB51D6988100012DBFE /* MainViewController.swift */,
+				FE02AEFE1D69ADBB00B9B4CC /* MainNavViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -331,7 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE57EEB61D6988100012DBFE /* MainViewController.swift in Sources */,
-				FE57EE821D697B970012DBFE /* ViewController.swift in Sources */,
+				FE02AEFF1D69ADBB00B9B4CC /* MainNavViewController.swift in Sources */,
 				FE57EE801D697B970012DBFE /* AppDelegate.swift in Sources */,
 				FE57EEB81D69885B0012DBFE /* HomeViewController.swift in Sources */,
 				FE02AEFD1D69A7B700B9B4CC /* ProfileViewController.swift in Sources */,
