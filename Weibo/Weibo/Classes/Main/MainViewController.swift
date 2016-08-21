@@ -10,6 +10,21 @@ import UIKit
 
 class MainViewController: UITabBarController {
 
+    private lazy var plusBtn:UIButton = {
+        
+        var btn = UIButton(type: UIButtonType.Custom)
+        btn.setImage(UIImage(named: "tabbar_compose_icon_add"), forState: UIControlState.Normal)
+        btn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
+        
+        btn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)
+        btn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
+        
+        btn.addTarget(self, action: "plusClick", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        btn.sizeToFit()
+        return btn
+    }()
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,8 +33,18 @@ class MainViewController: UITabBarController {
         
         //添加子控制器
         setupChilds()
+        print(tabBar.items);
     
     }
+    
+    
+    //IOS7之后推荐设置子控件的Frame在viewWillAppear方法中
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+       addPlusBtn()
+    }
+    
+ 
     
     private func setupTabbar(){
         self.tabBar.tintColor = UIColor.orangeColor()
@@ -76,7 +101,10 @@ class MainViewController: UITabBarController {
     
     //2.创建Message
     addChildViewController("MessageViewController", title: "消息", normalImage: "tabbar_message_center", selectImage: "tabbar_message_center_highlighted")
-    
+        
+    //3.添加+站位控制器
+         addChildViewController("MainNavViewController", title: "", normalImage: "", selectImage: "")
+        
     //4.创建Discover
     addChildViewController("DiscoverViewController", title: "发现", normalImage: "tabbar_discover", selectImage: "tabbar_discover_highlighted")
     
@@ -85,7 +113,7 @@ class MainViewController: UITabBarController {
     
     }
     }
-    }
+}
     
 
     }
@@ -125,6 +153,27 @@ class MainViewController: UITabBarController {
         childVc.tabBarItem.selectedImage = UIImage(named: selectImage)
         let nav = MainNavViewController(rootViewController: childVc)
         self.addChildViewController(nav)
+        
+//        if childVc.isKindOfClass(NullViewController){
+//            childVc.tabBarController?.view = plusBtn
+//        }
     }
 
+    //plusBtn相关方法
+    private func addPlusBtn(){
+        //添加plusBtn到tabBar
+        self.tabBar.addSubview(plusBtn)
+        
+        //设置plusBtn在tabBar的位置
+        let rect = UIScreen.mainScreen().bounds
+        
+        plusBtn.center = CGPoint(x: rect.width * 0.5, y: tabBar.bounds.height * 0.5)
+    }
+    
+    /**
+     监听按钮点击事件 不能 设置private 因为 并不是 本类 调用的
+     */
+    func plusClick(){
+        print(__FUNCTION__)
+    }
 }
