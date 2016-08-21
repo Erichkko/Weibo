@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FE02AEFD1D69A7B700B9B4CC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02AEFC1D69A7B700B9B4CC /* ProfileViewController.swift */; };
 		FE02AEFF1D69ADBB00B9B4CC /* MainNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02AEFE1D69ADBB00B9B4CC /* MainNavViewController.swift */; };
+		FE02AF031D69C7CB00B9B4CC /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = FE02AF011D69C7CB00B9B4CC /* MainVCSettings.json */; };
+		FE02AF041D69C7CB00B9B4CC /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02AF021D69C7CB00B9B4CC /* NullViewController.swift */; };
 		FE57EE801D697B970012DBFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57EE7F1D697B970012DBFE /* AppDelegate.swift */; };
 		FE57EE871D697B970012DBFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE57EE861D697B970012DBFE /* Assets.xcassets */; };
 		FE57EE951D697B970012DBFE /* WeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57EE941D697B970012DBFE /* WeiboTests.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		FE02AEFC1D69A7B700B9B4CC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FE02AEFE1D69ADBB00B9B4CC /* MainNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavViewController.swift; sourceTree = "<group>"; };
+		FE02AF011D69C7CB00B9B4CC /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		FE02AF021D69C7CB00B9B4CC /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
 		FE57EE7C1D697B970012DBFE /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE57EE7F1D697B970012DBFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE57EE861D697B970012DBFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE02AF001D69C7CB00B9B4CC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				FE02AF011D69C7CB00B9B4CC /* MainVCSettings.json */,
+				FE02AF021D69C7CB00B9B4CC /* NullViewController.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		FE57EE731D697B960012DBFE = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +182,7 @@
 		FE57EEB11D6987E60012DBFE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FE02AF001D69C7CB00B9B4CC /* Resource */,
 				FE57EEB51D6988100012DBFE /* MainViewController.swift */,
 				FE02AEFE1D69ADBB00B9B4CC /* MainNavViewController.swift */,
 			);
@@ -305,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE02AF031D69C7CB00B9B4CC /* MainVCSettings.json in Resources */,
 				FE57EE871D697B970012DBFE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +350,7 @@
 				FE57EE801D697B970012DBFE /* AppDelegate.swift in Sources */,
 				FE57EEB81D69885B0012DBFE /* HomeViewController.swift in Sources */,
 				FE02AEFD1D69A7B700B9B4CC /* ProfileViewController.swift in Sources */,
+				FE02AF041D69C7CB00B9B4CC /* NullViewController.swift in Sources */,
 				FE57EEBC1D69889A0012DBFE /* MessageViewController.swift in Sources */,
 				FE57EEBA1D6988840012DBFE /* DiscoverViewController.swift in Sources */,
 			);
