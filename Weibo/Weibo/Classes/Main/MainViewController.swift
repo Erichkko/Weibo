@@ -33,7 +33,6 @@ class MainViewController: UITabBarController {
         
         //添加子控制器
         setupChilds()
-        print(tabBar.items);
     
     }
     
@@ -84,13 +83,11 @@ class MainViewController: UITabBarController {
     
     //4.根据Json数据创建子控制器
     for dict in jsonArray as! NSArray{
-    print(dict)
     let imageName = dict["imageName"] as! String;
     let title = dict["title"] as! String;
     let vcName = dict["vcName"] as! String;
     addChildViewController(vcName , title: title, normalImage: imageName, selectImage: "\(imageName)_highlighted")
     }
-    print(jsonArray)
     }catch{
         
     //抛出异常时 ,通过 本地手动创建子控制器
