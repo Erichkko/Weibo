@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "37EEFFB94CB154B7AD1C6C0B43DC19A5C87F1998",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "65D6DB69FC84550EA0B40BE6508B97475483A876" : 0,
+    "37EEFFB94CB154B7AD1C6C0B43DC19A5C87F1998" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B5898F54-B931-45EB-83C2-8E0EB81691F6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "65D6DB69FC84550EA0B40BE6508B97475483A876" : "",
+    "37EEFFB94CB154B7AD1C6C0B43DC19A5C87F1998" : "Weibo\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Weibo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Weibo\/Weibo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Erichkko\/Weibo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "37EEFFB94CB154B7AD1C6C0B43DC19A5C87F1998"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Erichkko\/PinterestLayout.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "65D6DB69FC84550EA0B40BE6508B97475483A876"
+    }
+  ]
+}
