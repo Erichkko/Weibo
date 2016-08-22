@@ -8,11 +8,10 @@
 
 import UIKit
 
-class MessageViewController: UITableViewController {
+class MessageViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.blueColor()
     }
 
     override func didReceiveMemoryWarning() {

@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //2.设置跟控制器
         let vc =  MainViewController()
-        vc.view.backgroundColor = UIColor.redColor()
         self.window?.rootViewController = vc
         
         //3.显示根控制器

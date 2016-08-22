@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ProfileViewController: UITableViewController {
+class ProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.yellowColor()
+        super.viewDidLoad() 
     }
 
     override func didReceiveMemoryWarning() {
