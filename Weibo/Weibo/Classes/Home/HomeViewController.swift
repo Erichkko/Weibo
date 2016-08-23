@@ -12,8 +12,16 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setVistorInfo()
+        
     }
-
+    func setVistorInfo(){
+        if !isLogin{
+            if let vistorViewFinal = vistorView{
+                vistorViewFinal.setupVistorInfo(true, imageName: "visitordiscover_feed_image_house", message: "首页")
+            }
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

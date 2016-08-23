@@ -12,14 +12,16 @@ class DiscoverViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        setVistorInfo()
     }
 
+    func setVistorInfo(){
+        if !isLogin{
+            if let vistorViewFinal = vistorView{
+                vistorViewFinal.setupVistorInfo(false, imageName: "visitordiscover_feed_image_house", message: "发现")
+            }
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

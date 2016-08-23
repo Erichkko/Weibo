@@ -8,8 +8,19 @@
 
 import UIKit
 
-class VisitorView: UIView {
+protocol VisitorViewDelegate:NSObjectProtocol{
+   //登录回调
+    func loginCallback()
+    //注册回调
+    func registerCallback()
+    
+    
+}
 
+
+class VisitorView: UIView {
+    
+    weak var deleagte:VisitorViewDelegate?
     
     //创建背景图片
     private lazy var bgView:UIImageView = {
@@ -32,6 +43,8 @@ class VisitorView: UIView {
     private lazy var msgLabel:UILabel = {
         let msgLabel = UILabel()
         msgLabel.numberOfLines = 0
+    
+        msgLabel.textAlignment = NSTextAlignment.Center
         msgLabel.text = "登录微博,查看更多精彩内容...登录微博,查看更多精彩内容...登录微博,查看更多精彩内容..."
         msgLabel.textColor = UIColor.darkGrayColor()
 //        msgLabel.font = UIFont().fontWithSize(12)
@@ -44,6 +57,7 @@ class VisitorView: UIView {
         loginBtn.setTitle("登录", forState: UIControlState.Normal)
         loginBtn.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: UIControlState.Normal)
         loginBtn.setTitleColor(UIColor.orangeColor(), forState: UIControlState.Normal)
+        loginBtn.addTarget(self, action: "login", forControlEvents: UIControlEvents.TouchUpInside)
         return loginBtn
     }()
     
@@ -53,6 +67,7 @@ class VisitorView: UIView {
         regBtn.setTitle("注册", forState: UIControlState.Normal)
         regBtn.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: UIControlState.Normal)
         regBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        regBtn.addTarget(self, action: "register", forControlEvents: UIControlEvents.TouchUpInside)
         return regBtn
     }()
     
@@ -66,6 +81,34 @@ class VisitorView: UIView {
         return maskBgView;
         
     }()
+    
+    //根据具体的vc创建对应的View
+    func setupVistorInfo(isHome:Bool,imageName:String,message:String){
+        //设置转盘
+        bgView.hidden = !isHome;
+        if isHome{
+            startAnimationBg()
+        }
+        //设置Message
+        msgLabel.text = message;
+        
+        //设置IconView 
+        iconView.image = UIImage(named: imageName)
+    }
+    
+    //设置背景转盘动画
+    private func startAnimationBg(){
+        let anim  = CABasicAnimation(keyPath: "transform.rotation")
+        anim.fromValue = 0
+        anim.toValue = M_PI * 2
+        anim.duration = 20
+        anim.repeatCount = MAXFLOAT
+        
+        //该属性默认为true,代表动画只要执行完毕就会移除
+        anim.removedOnCompletion = false
+        bgView.layer.addAnimation(anim, forKey: nil)
+    }
+    
     //手动new创建代码
     override init(frame: CGRect) {
         super.init(frame: frame);
@@ -95,13 +138,14 @@ class VisitorView: UIView {
     }
     
     
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        bgView.center = self.center
-//        iconView.center = self.center
-//        msgLabel.center = self.center
-//        loginBtn.center = self.center
-//    }
+    func login(){
+         print(__FUNCTION__)
+        deleagte?.loginCallback()
+    }
+    func register(){
+        print(__FUNCTION__)
+        deleagte?.registerCallback()
+    }
     
     //Swift推荐我们自定义一个控件,要么用纯代码,要么用XIB/StoryBoard
     required init?(coder aDecoder: NSCoder) {

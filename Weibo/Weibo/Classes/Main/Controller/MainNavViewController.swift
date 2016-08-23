@@ -10,10 +10,14 @@ import UIKit
 
 class MainNavViewController: UINavigationController {
 
+    
+    //设置全局属性
+    override func loadView() {
+        super.loadView()
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

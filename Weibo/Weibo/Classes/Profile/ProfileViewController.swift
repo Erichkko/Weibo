@@ -11,12 +11,16 @@ import UIKit
 class ProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad() 
+        super.viewDidLoad()
+        setVistorInfo()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setVistorInfo(){
+        if !isLogin{
+            if let vistorViewFinal = vistorView{
+                vistorViewFinal.setupVistorInfo(false, imageName: "visitordiscover_image_profile", message: "我")
+            }
+        }
     }
 
     // MARK: - Table view data source

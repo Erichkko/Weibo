@@ -12,13 +12,16 @@ class MessageViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setVistorInfo()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setVistorInfo(){
+        if !isLogin{
+            if let vistorViewFinal = vistorView{
+                vistorViewFinal.setupVistorInfo(false, imageName: "visitordiscover_image_message", message: "消息")
+            }
+        }
     }
-
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

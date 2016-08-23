@@ -10,6 +10,11 @@ import UIKit
 
 class MainViewController: UITabBarController {
 
+    //设置全局属性
+    override func loadView() {
+         super.loadView()
+        UITabBar.appearance().tintColor = UIColor.orangeColor()
+    }
     private lazy var plusBtn:UIButton = {
         
         var btn = UIButton(type: UIButtonType.Custom)
@@ -46,7 +51,7 @@ class MainViewController: UITabBarController {
  
     
     private func setupTabbar(){
-        self.tabBar.tintColor = UIColor.orangeColor()
+//        self.tabBar.tintColor = UIColor.orangeColor()
     }
     
     private func setupChilds(){
