@@ -12,21 +12,54 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setVistorInfo()
         
+        
+        //初始化导航条的显示
+        setupNav()
+        //初始化中间显示内容
+        setVistorInfo()
+    
     }
-    func setVistorInfo(){
+    
+    private func setupNav(){
+        
+        if isLogin{
+        
+            self.navigationItem.leftBarButtonItem = createCustomBarButtonItem("navigationbar_friendattention", target: self, action: "friendsFollow")
+            self.navigationItem.rightBarButtonItem = createCustomBarButtonItem("navigationbar_pop", target: self, action: "radar")
+        }
+    }
+    
+    private func setVistorInfo(){
         if !isLogin{
             if let vistorViewFinal = vistorView{
                 vistorViewFinal.setupVistorInfo(true, imageName: "visitordiscover_feed_image_house", message: "首页")
             }
         }
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+  
+    
+    private func createCustomBarButtonItem(named:String
+    , target: AnyObject?, action: Selector)->UIBarButtonItem{
+        let btn = UIButton(type: UIButtonType.Custom)
+        btn.setImage(UIImage(named: named), forState: UIControlState.Normal)
+        btn.setImage(UIImage(named: named+"_highlighted"), forState: UIControlState.Highlighted)
+        btn.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        
+        btn.sizeToFit()
+        return UIBarButtonItem(customView: btn)
     }
-
+    
+    
+    func friendsFollow(){
+        print(__FUNCTION__)
+    }
+    
+    
+    func radar(){
+        print(__FUNCTION__)
+    }
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
