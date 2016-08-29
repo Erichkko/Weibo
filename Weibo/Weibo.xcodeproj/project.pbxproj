@@ -18,10 +18,12 @@
 		FE57EE871D697B970012DBFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE57EE861D697B970012DBFE /* Assets.xcassets */; };
 		FE57EE951D697B970012DBFE /* WeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57EE941D697B970012DBFE /* WeiboTests.swift */; };
 		FE57EEA01D697B970012DBFE /* WeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57EE9F1D697B970012DBFE /* WeiboUITests.swift */; };
-		FE57EEB81D69885B0012DBFE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57EEB71D69885B0012DBFE /* HomeViewController.swift */; };
 		FE57EEBA1D6988840012DBFE /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57EEB91D6988840012DBFE /* DiscoverViewController.swift */; };
 		FE57EEBC1D69889A0012DBFE /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57EEBB1D69889A0012DBFE /* MessageViewController.swift */; };
 		FE8DA81D1D6B3FE9006B924A /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DA81C1D6B3FE9006B924A /* UIView+AutoLayout.swift */; };
+		FE8DA81F1D74753B006B924A /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DA81E1D74753B006B924A /* UIBarButtonItem+Category.swift */; };
+		FE8DA8241D7477AB006B924A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DA8211D7477AB006B924A /* HomeViewController.swift */; };
+		FE8DA8261D7477E2006B924A /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DA8251D7477E2006B924A /* TitleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +61,12 @@
 		FE57EE9B1D697B970012DBFE /* WeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE57EE9F1D697B970012DBFE /* WeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboUITests.swift; sourceTree = "<group>"; };
 		FE57EEA11D697B970012DBFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE57EEB71D69885B0012DBFE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FE57EEB91D6988840012DBFE /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		FE57EEBB1D69889A0012DBFE /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		FE8DA81C1D6B3FE9006B924A /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		FE8DA81E1D74753B006B924A /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
+		FE8DA8211D7477AB006B924A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FE8DA8251D7477E2006B924A /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 		FE57EEAE1D6987E60012DBFE /* Commen */ = {
 			isa = PBXGroup;
 			children = (
+				FE8DA81E1D74753B006B924A /* UIBarButtonItem+Category.swift */,
 			);
 			path = Commen;
 			sourceTree = "<group>";
@@ -205,7 +210,9 @@
 		FE57EEB01D6987E60012DBFE /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				FE57EEB71D69885B0012DBFE /* HomeViewController.swift */,
+				FE8DA8201D7477AB006B924A /* Controller */,
+				FE8DA8221D7477AB006B924A /* Model */,
+				FE8DA8231D7477AB006B924A /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -243,6 +250,29 @@
 				FE8DA81C1D6B3FE9006B924A /* UIView+AutoLayout.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		FE8DA8201D7477AB006B924A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE8DA8211D7477AB006B924A /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FE8DA8221D7477AB006B924A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE8DA8231D7477AB006B924A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE8DA8251D7477E2006B924A /* TitleButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,14 +411,16 @@
 				FE02AF0E1D6B301C00B9B4CC /* MainNavViewController.swift in Sources */,
 				FE02AF0F1D6B301C00B9B4CC /* MainViewController.swift in Sources */,
 				FE57EE801D697B970012DBFE /* AppDelegate.swift in Sources */,
-				FE57EEB81D69885B0012DBFE /* HomeViewController.swift in Sources */,
 				FE02AEFD1D69A7B700B9B4CC /* ProfileViewController.swift in Sources */,
 				FE02AF0D1D6B301C00B9B4CC /* BaseViewController.swift in Sources */,
 				FE02AF041D69C7CB00B9B4CC /* NullViewController.swift in Sources */,
 				FE02AF111D6B303A00B9B4CC /* VisitorView.swift in Sources */,
+				FE8DA81F1D74753B006B924A /* UIBarButtonItem+Category.swift in Sources */,
 				FE57EEBC1D69889A0012DBFE /* MessageViewController.swift in Sources */,
 				FE8DA81D1D6B3FE9006B924A /* UIView+AutoLayout.swift in Sources */,
 				FE57EEBA1D6988840012DBFE /* DiscoverViewController.swift in Sources */,
+				FE8DA8261D7477E2006B924A /* TitleButton.swift in Sources */,
+				FE8DA8241D7477AB006B924A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

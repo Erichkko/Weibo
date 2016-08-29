@@ -12,22 +12,25 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         //初始化导航条的显示
         setupNav()
         //初始化中间显示内容
         setVistorInfo()
-    
     }
     
     private func setupNav(){
         
         if isLogin{
-        
-            self.navigationItem.leftBarButtonItem = createCustomBarButtonItem("navigationbar_friendattention", target: self, action: "friendsFollow")
-            self.navigationItem.rightBarButtonItem = createCustomBarButtonItem("navigationbar_pop", target: self, action: "radar")
+            //设置左右2边的BarButtonItem
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem.createCustomBarButtonItem("navigationbar_friendattention", target: self, action: "friendsFollow")
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.createCustomBarButtonItem("navigationbar_pop", target: self, action: "radar")
+            //设置Title
+            let titleView = TitleButton()
+            titleView.setTitle("王龙的微博", forState: UIControlState.Normal)
+            titleView.addTarget(self, action: "titleBtnClick:", forControlEvents: UIControlEvents.TouchUpInside)
+            navigationItem.titleView = titleView;
         }
+        
     }
     
     private func setVistorInfo(){
@@ -58,6 +61,16 @@ class HomeViewController: BaseViewController {
     
     
     func radar(){
+        print(__FUNCTION__)
+    }
+    
+    /**
+     监听标题按钮点击
+     
+     :param: btn 标题按钮
+     */
+    func titleBtnClick(btn: TitleButton){
+        btn.selected = !btn.selected
         print(__FUNCTION__)
     }
     // MARK: - Table view data source
