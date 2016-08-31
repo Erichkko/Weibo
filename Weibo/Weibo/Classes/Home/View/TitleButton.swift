@@ -26,7 +26,7 @@ class TitleButton: UIButton {
         super.layoutSubviews()
         self.sizeToFit()
         titleLabel?.frame.origin.x = 0
-       imageView?.frame.origin.x = titleLabel!.frame.size.width + 5
+        imageView?.frame.origin.x = titleLabel!.frame.size.width + 5
     }
 
 }

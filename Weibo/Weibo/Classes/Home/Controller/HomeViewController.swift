@@ -66,12 +66,20 @@ class HomeViewController: BaseViewController {
     
     /**
      监听标题按钮点击
-     
      :param: btn 标题按钮
      */
     func titleBtnClick(btn: TitleButton){
         btn.selected = !btn.selected
         print(__FUNCTION__)
+        let storyboard = UIStoryboard(name: "PopoverTitle", bundle: nil)
+        let popoverTitleVc =  storyboard.instantiateInitialViewController();
+        // 2.1设置转场代理
+        // 默认情况下modal会移除以前控制器的view, 替换为当前弹出的view
+        // 如果自定义转场, 那么就不会移除以前控制器的view
+        popoverTitleVc?.transitioningDelegate = self
+        // 2.2设置转场的样式
+        popoverTitleVc?.modalPresentationStyle = UIModalPresentationStyle.Custom
+        self.presentViewController(popoverTitleVc!, animated: true, completion: nil)
     }
     // MARK: - Table view data source
 
@@ -140,4 +148,10 @@ class HomeViewController: BaseViewController {
     }
     */
 
+}
+
+extension HomeViewController:UIViewControllerTransitioningDelegate{
+     internal func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController?{
+        return PopoverTitleUIPresentationController(presentedViewController: presented, presentingViewController: presenting)
+    }
 }
