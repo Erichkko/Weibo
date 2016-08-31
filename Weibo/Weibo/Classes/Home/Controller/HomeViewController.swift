@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    var titleBtn:UIButton?
     override func viewDidLoad() {
         super.viewDidLoad()
         //初始化导航条的显示
@@ -51,7 +52,8 @@ class HomeViewController: BaseViewController {
         btn.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
         
         btn.sizeToFit()
-        return UIBarButtonItem(customView: btn)
+        titleBtn = btn
+        return UIBarButtonItem(customView: titleBtn!)
     }
     
     
@@ -151,7 +153,15 @@ class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController:UIViewControllerTransitioningDelegate{
-     internal func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController?{
+      func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController?{
         return PopoverTitleUIPresentationController(presentedViewController: presented, presentingViewController: presenting)
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?{
+        print("dismiss")
+        if let titleBtnFinal = titleBtn{
+            titleBtnFinal.selected = false
+        }
+        return nil
     }
 }
